@@ -32,7 +32,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+@app.get('/')
+def home():
+    return {"Working"}
     
 @app.post('/predict')
 def predict_diabeties( data : PredictionData):
